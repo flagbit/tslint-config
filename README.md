@@ -2,7 +2,13 @@
 
 ## How to use
 
-Install the package inside your project and add a tslint.json containing this:
+Install the package inside your project...
+
+```shell
+yarn add @flagbit/tslint-config
+```
+
+...and add a tslint.json containing this:
 
 ```json
 {
