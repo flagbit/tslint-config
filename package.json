@@ -1,0 +1,9 @@
+{
+  "name": "@flagbit/tslint-config",
+  "version": "1.0.0",
+  "main": "tslint-config.json",
+  "license": "MIT",
+  "dependencies": {
+    "codelyzer": "^4.5.0"
+  }
+}
