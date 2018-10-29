@@ -12,6 +12,6 @@ yarn add @flagbit/tslint-config
 
 ```json
 {
-  "extends": "@flagbit/tslint-config/tslint-config.json"
+  "extends": "@flagbit/tslint-config"
 }
 ```
