@@ -44,6 +44,8 @@
         ]
       }
     ],
+    "newline-before-return": true,
+    "newline-per-chained-call": true,
     "no-arg": true,
     "no-bitwise": true,
     "no-console": [
@@ -64,6 +66,7 @@
       true,
       "ignore-params"
     ],
+    "no-irregular-whitespace": true,
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
@@ -74,6 +77,7 @@
     "no-trailing-whitespace": true,
     "no-unnecessary-initializer": true,
     "no-unused-expression": true,
+    "no-unused-variable": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
@@ -84,6 +88,7 @@
       "check-else",
       "check-whitespace"
     ],
+    "one-variable-per-declaration": true,
     "prefer-const": true,
     "quotemark": [
       true,
@@ -114,7 +119,7 @@
       }
     ],
     "unified-signatures": true,
-    "variable-name": false,
+    "variable-name": true,
     "whitespace": [
       true,
       "check-branch",
