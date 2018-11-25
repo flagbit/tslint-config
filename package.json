@@ -1,6 +1,6 @@
 {
   "name": "@flagbit/tslint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "tslint-config.json",
   "license": "MIT",
   "dependencies": {
