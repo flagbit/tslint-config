@@ -84,3 +84,20 @@ Good:
 ```typescript
 const someVariable = 'something';
 ```
+
+### template-i18n
+
+We make sure that everytime an i18n directive is used inside the templates, we
+also added an i18n-id. This is making your translation-files way more readable.
+
+### use-component-view-encapsulation
+
+We are forcing that we never use `ViewEncapsulation.None` in components.
+This way we are minimizing the risk of breaking styles outside of the
+component we're working on.
+
+### prefer-on-push-component-change-detection
+
+We are forcing `ChangeDetection.OnPush` in components. With this we are
+minimizing the risk of a poor performance by too deep and heavy ChangeDetection
+loops.
