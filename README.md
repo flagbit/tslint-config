@@ -21,6 +21,42 @@ yarn add @flagbit/tslint-config
 Our tslint rules are pretty much the same as in a regular @angular/cli project,
 but with a twist:
 
+### completed-docs
+
+Everything needs to be documented! A good example of well documented code can
+be found here:
+
+[HooksService](https://github.com/flagbit/angular-storefront/blob/develop/projects/angular-storefront-services/src/lib/services/hooks.service.ts)
+
+A minimal example would be something like this:
+
+```typescript
+/**
+ * ExampleComponent
+ * ================
+ *
+ * This component is used to demostrate how our code should look like.
+ */
+export class ExampleComponent {
+  /**
+   * We are storing something inside this property
+   */
+  private _something = false;
+
+  /**
+   * The description of this method
+   * @param param The parameter that is getting passed
+   */
+  public someMethod(param: number): boolean {
+    if (param) {
+      return true;
+    }
+
+    return this._something;
+  }
+}
+```
+
 ### newline-before-return
 
 This is making your code more readable. Forcing a newline before return, if there
@@ -68,22 +104,33 @@ the methods need as input, and what they give back.
 ### variable-name
 
 We are forcing proper variable-names, to have cleaner code. variables have to
-be in `camelCase`, to see directly if one is a variable or a class or whatever.
+be in `camelCase` or `UPPERCASE`, to see directly if one is a variable or a
+class or whatever. Also leading underscores are allowed, to name private
+properties in classes. The `UPPERCASE` is forcing us to use `const`
 
 #### Example
 
 Bad:
 
 ```typescript
-const SomeVariable = 'something';
-const _someVariable = 'something';
+const Some_VariAble = 'something';
 ```
 
 Good:
 
 ```typescript
-const someVariable = 'something';
+let someVariable = 'something';
+const SOMEVARIABLE = 'something';
+
+export class ExampleComponent {
+  private _property: boolean;
+}
 ```
+
+### no-unused-css
+
+We make sure that we don't have css inside our stylesheets that isn't used
+inside the component.
 
 ### template-i18n
 

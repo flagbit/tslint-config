@@ -8,5 +8,6 @@
     "statusBar.background": "#0221d7",
     "statusBarItem.hoverBackground": "#0f32fd",
     "statusBar.foreground": "#e7e7e7"
-  }
+  },
+  "tslint.configFile": "tslint-config.json"
 }

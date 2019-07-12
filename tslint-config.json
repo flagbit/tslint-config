@@ -5,6 +5,7 @@
     "callable-types": true,
     "class-name": true,
     "comment-format": [true, "check-space"],
+    "completed-docs": true,
     "curly": true,
     "deprecation": {
       "severity": "warn"
@@ -17,7 +18,7 @@
     "interface-over-type-literal": true,
     "label-position": true,
     "max-line-length": [true, 140],
-    "member-access": false,
+    "member-access": true,
     "member-ordering": [
       true,
       {
@@ -84,7 +85,12 @@
       }
     ],
     "unified-signatures": true,
-    "variable-name": true,
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-leading-underscore",
+      "require-const-for-all-caps"
+    ],
     "whitespace": [
       true,
       "check-branch",
