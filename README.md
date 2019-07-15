@@ -80,7 +80,7 @@ export class ExampleComponent {
 
 Good:
 
-````typescript
+```typescript
 export class ExampleComponent {
   // ...
   public somePublicMethod(paramOne: boolean, paramTwo: boolean): boolean {
@@ -98,6 +98,7 @@ export class ExampleComponent {
     return this._property;
   }
 }
+```
 
 ### no-irregular-whitespace
 
@@ -117,7 +118,7 @@ This is bad, because you don't see in first sight if you are declaring or re-dec
 const one = 'one',
   two = 'two',
   three = 'three';
-````
+```
 
 This is more readable:
 
