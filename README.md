@@ -69,7 +69,7 @@ Bad:
 ```typescript
 export class ExampleComponent {
   // ...
-  public somePublicMethod(paramOne, paramTwo) {
+  public somePublicMethod(paramOne: boolean, paramTwo: boolean): boolean {
     if (paramOne) {
       return paramTwo;
     }
@@ -80,8 +80,24 @@ export class ExampleComponent {
 
 Good:
 
-```typescript
-```
+````typescript
+export class ExampleComponent {
+  // ...
+  public somePublicMethod(paramOne: boolean, paramTwo: boolean): boolean {
+    if (paramOne) {
+      return paramTwo;
+    }
+
+    return paramOne;
+  }
+
+  /**
+   * If the return is the ONLY line, you shouldn't add the emptyline
+   */
+  public someOtherPublicMethod(): boolean {
+    return this._property;
+  }
+}
 
 ### no-irregular-whitespace
 
@@ -101,7 +117,7 @@ This is bad, because you don't see in first sight if you are declaring or re-dec
 const one = 'one',
   two = 'two',
   three = 'three';
-```
+````
 
 This is more readable:
 
@@ -124,10 +140,11 @@ Bad:
 ```typescript
 export class ExampleComponent {
   // ...
-  public somePublicMethod(paramOne: boolean, paramTwo: boolean): boolean {
+  public somePublicMethod(paramOne, paramTwo) {
     if (paramOne) {
       return paramTwo;
     }
+
     return paramOne;
   }
 }
@@ -144,13 +161,6 @@ export class ExampleComponent {
     }
 
     return paramOne;
-  }
-
-  /**
-   * If the return is the ONLY line, you shouldn't add the emptyline
-   */
-  public someOtherPublicMethod(): boolean {
-    return this._property;
   }
 }
 ```
