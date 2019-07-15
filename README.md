@@ -57,6 +57,34 @@ export class ExampleComponent {
 }
 ```
 
+### member-access
+
+This rule is making sure that every class-member needs defined access.
+Please keep in mind that during your unit-tests you can only access the
+public properties!
+
+#### Example
+
+Bad:
+
+```typescript
+export class ExampleComponent {
+  someMethod(): boolean {
+    // ...
+  }
+}
+```
+
+Good:
+
+```typescript
+export class ExampleComponent {
+  public someMethod(): boolean {
+    // ...
+  }
+}
+```
+
 ### newline-before-return
 
 This is making your code more readable. Forcing a newline before return, if there
@@ -112,7 +140,8 @@ more than one variable per declaration block.
 
 #### Example
 
-This is bad, because you don't see in first sight if you are declaring or re-declaring:
+This is bad, because you don't see in first sight if you are declaring or
+re-declaring:
 
 ```typescript
 const one = 'one',
