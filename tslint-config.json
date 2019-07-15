@@ -71,6 +71,7 @@
     "semicolon": [true, "always"],
     "use-component-view-encapsulation": true,
     "template-i18n": [true, "check-id", "check-text"],
+    "template-use-track-by-function": true,
     "triple-equals": [true, "allow-null-check"],
     "typedef": [true, "call-signature", "parameter"],
     "typedef-whitespace": [

@@ -148,3 +148,37 @@ component we're working on.
 We are forcing `ChangeDetection.OnPush` in components. With this we are
 minimizing the risk of a poor performance by too deep and heavy ChangeDetection
 loops.
+
+### template-use-track-by-function
+
+We can help Angular to track which items added or removed by providing a
+trackBy function. The trackBy function takes the index and the current item as
+arguments and needs to return the unique identifier for this item.
+
+Its always a good idea to use a trackBy function in `*ngFor`. With this rule we
+make sure that every template-loop is using one!
+
+Bad:
+
+```html
+<li *ngFor="let product of products">
+  <!-- ... -->
+</li>
+```
+
+Good:
+
+```typescript
+export class ListProductsComponent {
+  // ...
+  public trackByFn(index: number, item: IProduct): string {
+    return item.id;
+  }
+}
+```
+
+```html
+<li *ngFor="let product of products;trackBy: trackByFn">
+  <!-- ... -->
+</li>
+```
