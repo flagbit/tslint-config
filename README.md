@@ -62,15 +62,31 @@ export class ExampleComponent {
 This is making your code more readable. Forcing a newline before return, if there
 is more than one line in your method.
 
+#### Example
+
+Bad:
+
+```typescript
+export class ExampleComponent {
+  // ...
+  public somePublicMethod(paramOne, paramTwo) {
+    if (paramOne) {
+      return paramTwo;
+    }
+    return paramOne;
+  }
+}
+```
+
+Good:
+
+```typescript
+```
+
 ### no-irregular-whitespace
 
 This is making your code more readable, as it forbids to many empty lines, where
 they aren't necessary.
-
-### no-unused-variable
-
-This is resulting in cleaner code, as the linting fails if you defined a variable
-that isn't used. This rule will also fail if ou imported a module, that you don't use.
 
 ### one-variable-per-declaration
 
@@ -101,6 +117,44 @@ We are forcing, that parameters and call-signatures always have a typedef.
 This is leading to easier editing and/or extending, as you always know what
 the methods need as input, and what they give back.
 
+#### Example
+
+Bad:
+
+```typescript
+export class ExampleComponent {
+  // ...
+  public somePublicMethod(paramOne: boolean, paramTwo: boolean): boolean {
+    if (paramOne) {
+      return paramTwo;
+    }
+    return paramOne;
+  }
+}
+```
+
+Good:
+
+```typescript
+export class ExampleComponent {
+  // ...
+  public somePublicMethod(paramOne: boolean, paramTwo: boolean): boolean {
+    if (paramOne) {
+      return paramTwo;
+    }
+
+    return paramOne;
+  }
+
+  /**
+   * If the return is the ONLY line, you shouldn't add the emptyline
+   */
+  public someOtherPublicMethod(): boolean {
+    return this._property;
+  }
+}
+```
+
 ### variable-name
 
 We are forcing proper variable-names, to have cleaner code. variables have to
@@ -124,6 +178,10 @@ const SOMEVARIABLE = 'something';
 
 export class ExampleComponent {
   private _property: boolean;
+
+  public somePublicMethod(): boolean {
+    return this._property;
+  }
 }
 ```
 
@@ -136,6 +194,24 @@ inside the component.
 
 We make sure that everytime an i18n directive is used inside the templates, we
 also added an i18n-id. This is making your translation-files way more readable.
+
+#### Example
+
+Bad:
+
+```html
+<p>Component Works!</p>
+```
+
+```html
+<p i18n>Component Works!</p>
+```
+
+Good:
+
+```html
+<p i18n="@@componentWorksMessage">Component Works!</p>
+```
 
 ### use-component-view-encapsulation
 
@@ -157,6 +233,8 @@ arguments and needs to return the unique identifier for this item.
 
 Its always a good idea to use a trackBy function in `*ngFor`. With this rule we
 make sure that every template-loop is using one!
+
+#### Example
 
 Bad:
 
